@@ -270,6 +270,7 @@
 
 <main id="main"></main>
 
+<script src="data.js"></script>
 <script>
 // ─── TRANSLATIONS ─────────────────────────────────────────────────────────────
 
@@ -296,286 +297,7 @@ let lang = 'fr';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
-const CCAA = [
-  {
-    id: "nacional",
-    name: { fr: "Partis nationaux", es: "Partidos nacionales" },
-    subtitle: { fr: "Congrès des Députés — mis à jour mars 2026", es: "Congreso de los Diputados — actualizado marzo 2026" },
-    parties: [
-      { name:"Podemos",  cx:108, cy:175, r:9,  color:"#6B2B9A", leader:"Ione Belarra",
-        desc:{ fr:"Extrême gauche · fédéraliste-plurinationaliste · 5 sièges (2023)", es:"Extrema izquierda · federalista-plurinacionalista · 5 escaños (2023)" }},
-      { name:"Sumar",    cx:152, cy:285, r:10, color:"#C0004E", leader:"Yolanda Díaz",
-        desc:{ fr:"Gauche plurielle · reconnaît le droit à décider · 31 sièges (2023)", es:"Izquierda plural · reconoce el derecho a decidir · 31 escaños (2023)" }},
-      { name:"PSOE",     cx:230, cy:190, r:11, color:"#E4003A", leader:"Pedro Sánchez",
-        desc:{ fr:"Centre-gauche · unioniste fédéraliste · 122 sièges (2023)", es:"Centro-izquierda · unionista federalista · 122 escaños (2023)" }},
-      { name:"Cs",       cx:385, cy:130, r:7,  color:"#FA5000", leader:"Patricia Guasp",
-        desc:{ fr:"Centre libéral · fort unioniste · 0 siège (2023, en déclin)", es:"Centro liberal · fuertemente unionista · 0 escaños (2023, en declive)" }},
-      { name:"PP",       cx:435, cy:160, r:11, color:"#0056A2", leader:"Alberto Núñez Feijóo",
-        desc:{ fr:"Centre-droit conservateur · unioniste fort · 137 sièges (2023)", es:"Centro-derecha conservadora · fuertemente unionista · 137 escaños (2023)" }},
-      { name:"UPN",      cx:468, cy:138, r:6,  color:"#004A9A", leader:"Sergio Sayas",
-        desc:{ fr:"Droite navarraise · unioniste · 1 siège (2023)", es:"Derecha navarra · unionista · 1 escaño (2023)" }},
-      { name:"Vox",      cx:532, cy:108, r:10, color:"#63BE21", leader:"Santiago Abascal",
-        desc:{ fr:"Extrême droite · ultra-centraliste · crise interne (mars 2026) : Espinosa, Ortega Smith, Monasterio réclament un congrès extraordinaire contre Abascal", es:"Extrema derecha · ultracentralista · crisis interna (marzo 2026): Espinosa, Ortega Smith, Monasterio exigen congreso extraordinario contra Abascal" }},
-      { name:"CC",       cx:418, cy:335, r:7,  color:"#C8960C", leader:"Fernando Clavijo",
-        desc:{ fr:"Centre-droit · régionalisme canarie (autonomie, pas indépendance) · 4 sièges (2023)", es:"Centro-derecha · regionalismo canario (autonomía, no independencia) · 4 escaños (2023)" }},
-    ],
-    legend:{
-      fr:[ {color:"#E4003A",label:"Izquierda / Social-democracia"},{color:"#6B2B9A",label:"Izquierda radical"},{color:"#FA5000",label:"Centro liberal"},{color:"#0056A2",label:"Derecha conservadora"},{color:"#63BE21",label:"Extrema derecha"},{color:"#C8960C",label:"Regionalismo"} ],
-      es:[ {color:"#E4003A",label:"Izquierda / Socialdemocracia"},{color:"#6B2B9A",label:"Izquierda radical"},{color:"#FA5000",label:"Centro liberal"},{color:"#0056A2",label:"Derecha conservadora"},{color:"#63BE21",label:"Extrema derecha"},{color:"#C8960C",label:"Regionalismo"} ],
-    }
-  },
-  {
-    id: "cataluña",
-    name: { fr: "Catalogne", es: "Cataluña" },
-    subtitle: { fr: "Parlament de Catalunya — mis à jour mars 2026", es: "Parlament de Catalunya — actualizado marzo 2026" },
-    parties: [
-      { name:"PSC",     cx:240, cy:190, r:11, color:"#E4003A", leader:"Salvador Illa",
-        desc:{ fr:"Parti des Socialistes de Catalogne · centre-gauche · unioniste fédéraliste (branche catalane du PSOE)", es:"Partido de los Socialistas de Cataluña · centro-izquierda · unionista federalista (rama catalana del PSOE)" }},
-      { name:"ERC",     cx:148, cy:355, r:10, color:"#F4A900", leader:"Oriol Junqueras",
-        desc:{ fr:"Esquerra Republicana · gauche républicaine · indépendantiste · soutient Illa · négocie financement singulier avec PSOE (2025-26)", es:"Esquerra Republicana · izquierda republicana · independentista · apoya Illa · negocia financiación singular con PSOE (2025-26)" }},
-      { name:"Junts",   cx:400, cy:408, r:9,  color:"#00527F", leader:"Carles Puigdemont",
-        desc:{ fr:"Junts per Catalunya · droite libérale · indépendantiste dur · rupture PSOE (2025) · réclame concierto économique", es:"Junts per Catalunya · derecha liberal · independentista duro · ruptura PSOE (2025) · exige concierto económico" }},
-      { name:"CUP",     cx:95,  cy:420, r:7,  color:"#FFCC00", leader:"Laia Estrada",
-        desc:{ fr:"Candidatura d'Unitat Popular · extrême gauche · indépendantiste radical · anticapitaliste", es:"Candidatura d'Unitat Popular · extrema izquierda · independentista radical · anticapitalista" }},
-      { name:"PP cat.", cx:435, cy:162, r:8,  color:"#0056A2", leader:"Alejandro Fernández",
-        desc:{ fr:"PP Catalogne · droite · unioniste fort · hostile au statut d'autonomie élargi", es:"PP Cataluña · derecha · fuertemente unionista · contrario a ampliar el estatuto de autonomía" }},
-      { name:"Vox cat.",cx:530, cy:108, r:7,  color:"#63BE21", leader:"Ignacio Garriga",
-        desc:{ fr:"Vox Catalogne · extrême droite · ultra-centraliste", es:"Vox Cataluña · extrema derecha · ultracentralista" }},
-      { name:"Comuns",  cx:142, cy:262, r:8,  color:"#A8139E", leader:"Jéssica Albiach",
-        desc:{ fr:"Catalunya en Comú · gauche verte · fédéraliste / droit à décider (pas clairement indépendantiste)", es:"Catalunya en Comú · izquierda verde · federalista / derecho a decidir (no claramente independentista)" }},
-      { name:"Cs cat.", cx:390, cy:132, r:6,  color:"#FA5000", leader:"Carlos Carrizosa",
-        desc:{ fr:"Ciudadanos Catalogne · centre libéral · unioniste fort (en déclin fort)", es:"Ciudadanos Cataluña · centro liberal · fuertemente unionista (en fuerte declive)" }},
-      { name:"Aliança", cx:455, cy:130, r:7,  color:"#0044AA", leader:"Sílvia Orriols",
-        desc:{ fr:"Aliança Catalana · droite identitaire · indépendantiste · en forte croissance, pression sur Junts par la droite (2025-26)", es:"Aliança Catalana · derecha identitaria · independentista · en fuerte crecimiento, presiona a Junts por la derecha (2025-26)" }},
-    ],
-    legend:{
-      fr:[ {color:"#E4003A",label:"Social-démocratie (unioniste)"},{color:"#F4A900",label:"Gauche indépendantiste"},{color:"#FFCC00",label:"Extrême gauche indépendantiste"},{color:"#A8139E",label:"Gauche verte / fédéraliste"},{color:"#00527F",label:"Droite indépendantiste"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#E4003A",label:"Socialdemocracia (unionista)"},{color:"#F4A900",label:"Izquierda independentista"},{color:"#FFCC00",label:"Extrema izquierda independentista"},{color:"#A8139E",label:"Izquierda verde / federalista"},{color:"#00527F",label:"Derecha independentista"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-  {
-    id: "euskadi",
-    name: { fr: "Pays Basque", es: "País Vasco" },
-    subtitle: { fr: "Eusko Legebiltzarra — partis principaux", es: "Eusko Legebiltzarra — principales partidos" },
-    parties: [
-      { name:"EH Bildu", cx:108, cy:400, r:10, color:"#C8D400", leader:"Arnaldo Otegi",
-        desc:{ fr:"Gauche indépendantiste · héritière d'Herri Batasuna · abertzale de gauche", es:"Izquierda independentista · heredera de Herri Batasuna · izquierda abertzale" }},
-      { name:"EAJ-PNV", cx:370, cy:340, r:11, color:"#009A44", leader:"Imanol Pradales",
-        desc:{ fr:"Parti nationaliste basque · centre-droit · nationaliste modéré · autonomiste (non clairement indépendantiste)", es:"Partido Nacionalista Vasco · centro-derecha · nacionalismo moderado · autonomista (no claramente independentista)" }},
-      { name:"PSE-EE",  cx:235, cy:190, r:9,  color:"#E4003A", leader:"Eneko Andueza",
-        desc:{ fr:"Socialistes basques (PSOE) · centre-gauche · unioniste fédéraliste", es:"Socialistas vascos (PSOE) · centro-izquierda · unionista federalista" }},
-      { name:"PP Eus.", cx:432, cy:162, r:7,  color:"#0056A2", leader:"Javier de Andrés",
-        desc:{ fr:"PP Pays Basque · droite · unioniste fort", es:"PP País Vasco · derecha · fuertemente unionista" }},
-      { name:"Vox Eus.",cx:528, cy:110, r:6,  color:"#63BE21", leader:"Amaia Martínez",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"Elkarrekin",cx:148,cy:272,r:7,  color:"#A8139E", leader:"Miren Gorrotxategi",
-        desc:{ fr:"Podemos Pays Basque · gauche · fédéraliste, soutient droit à décider", es:"Podemos País Vasco · izquierda · federalista, apoya el derecho a decidir" }},
-      { name:"Cs Eus.", cx:385, cy:130, r:5,  color:"#FA5000", leader:"–",
-        desc:{ fr:"Ciudadanos · centre · unioniste (quasi-disparu)", es:"Ciudadanos · centro · unionista (prácticamente desaparecido)" }},
-    ],
-    legend:{
-      fr:[ {color:"#009A44",label:"Nationalisme basque modéré (PNV)"},{color:"#C8D400",label:"Gauche indépendantiste abertzale"},{color:"#E4003A",label:"Social-démocratie unioniste"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#009A44",label:"Nacionalismo vasco moderado (PNV)"},{color:"#C8D400",label:"Izquierda independentista abertzale"},{color:"#E4003A",label:"Socialdemocracia unionista"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-  {
-    id: "galicia",
-    name: { fr: "Galice", es: "Galicia" },
-    subtitle: { fr: "Parlamento de Galicia — partis principaux", es: "Parlamento de Galicia — principales partidos" },
-    parties: [
-      { name:"PPdeG",   cx:425, cy:145, r:11, color:"#0056A2", leader:"Alfonso Rueda",
-        desc:{ fr:"PP Galice · droite · hégémonique en Galice · unioniste, mais valorise identité galicienne", es:"PP Galicia · derecha · hegemónico en Galicia · unionista, aunque reivindica la identidad gallega" }},
-      { name:"BNG",     cx:132, cy:370, r:9,  color:"#3B8A8A", leader:"Ana Pontón",
-        desc:{ fr:"Bloque Nacionalista Galego · gauche nationaliste · indépendantiste / fédéraliste (varie)", es:"Bloque Nacionalista Galego · izquierda nacionalista · independentista / federalista (según el momento)" }},
-      { name:"PSdeG",   cx:235, cy:185, r:8,  color:"#E4003A", leader:"José Ramón Gómez Besteiro",
-        desc:{ fr:"Socialistes galiciens (PSOE) · centre-gauche · unioniste fédéraliste", es:"Socialistas gallegos (PSOE) · centro-izquierda · unionista federalista" }},
-      { name:"Sumar Gal",cx:155,cy:268, r:6,  color:"#C0004E", leader:"Marta Lois",
-        desc:{ fr:"Sumar Galice · gauche · fédéraliste, droit à décider", es:"Sumar Galicia · izquierda · federalista, derecho a decidir" }},
-      { name:"Vox Gal.", cx:528, cy:110, r:6, color:"#63BE21", leader:"José Carneiro",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"Dem. Gal",cx:200, cy:340, r:6,  color:"#7A5C00", leader:"Gonzalo Pérez Jácome",
-        desc:{ fr:"Democracia Ourensana · régionalisme local · centre-droite", es:"Democracia Ourensana · regionalismo local · centro-derecha" }},
-    ],
-    legend:{
-      fr:[ {color:"#0056A2",label:"Droite (PP dominant)"},{color:"#3B8A8A",label:"Nationalisme galicien de gauche"},{color:"#E4003A",label:"Social-démocratie unioniste"} ],
-      es:[ {color:"#0056A2",label:"Derecha (PP dominante)"},{color:"#3B8A8A",label:"Nacionalismo gallego de izquierda"},{color:"#E4003A",label:"Socialdemocracia unionista"} ],
-    }
-  },
-  {
-    id: "comunitat_valenciana",
-    name: { fr: "C. Valencienne", es: "C. Valenciana" },
-    subtitle: { fr: "Corts Valencianes — partis principaux", es: "Corts Valencianes — principales partidos" },
-    parties: [
-      { name:"PSPV",    cx:238, cy:188, r:9,  color:"#E4003A", leader:"Diana Morant",
-        desc:{ fr:"Socialistes valenciens (PSOE) · centre-gauche · unioniste fédéraliste", es:"Socialistas valencianos (PSOE) · centro-izquierda · unionista federalista" }},
-      { name:"PPCV",    cx:432, cy:158, r:11, color:"#0056A2", leader:"Carlos Mazón",
-        desc:{ fr:"PP C. Valencienne · droite · unioniste fort · au pouvoir depuis 2023", es:"PP Comunitat Valenciana · derecha · fuertemente unionista · en el poder desde 2023" }},
-      { name:"Vox CV",  cx:530, cy:108, r:8,  color:"#63BE21", leader:"José María Llanos",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"Compromís",cx:155,cy:320, r:9,  color:"#E8820C", leader:"Joan Baldoví",
-        desc:{ fr:"Coalition valencianiste · gauche verte · nationalisme valencien modéré · fédéraliste", es:"Coalición valencianista · izquierda verde · nacionalismo valenciano moderado · federalista" }},
-      { name:"Sumar CV",cx:148, cy:265, r:6,  color:"#C0004E", leader:"Pilar Lima",
-        desc:{ fr:"Sumar C. Valencienne · gauche · fédéraliste", es:"Sumar Comunitat Valenciana · izquierda · federalista" }},
-    ],
-    legend:{
-      fr:[ {color:"#E8820C",label:"Nationalisme valencien (Compromís)"},{color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#E8820C",label:"Nacionalismo valenciano (Compromís)"},{color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-  {
-    id: "andalucia",
-    name: { fr: "Andalousie", es: "Andalucía" },
-    subtitle: { fr: "Parlamento de Andalucía — partis principaux", es: "Parlamento de Andalucía — principales partidos" },
-    parties: [
-      { name:"PSOE-A",  cx:240, cy:192, r:10, color:"#E4003A", leader:"María Jesús Montero",
-        desc:{ fr:"Socialistes andalous · centre-gauche · unioniste. Longtemps hégémonique en Andalousie.", es:"Socialistas andaluces · centro-izquierda · unionista. Largo tiempo hegemónicos en Andalucía." }},
-      { name:"PP-A",    cx:435, cy:155, r:11, color:"#0056A2", leader:"Juanma Moreno Bonilla",
-        desc:{ fr:"PP Andalousie · droite · unioniste · au pouvoir depuis 2018 (Moreno Bonilla)", es:"PP Andalucía · derecha · unionista · en el poder desde 2018 (Moreno Bonilla)" }},
-      { name:"Vox-A",   cx:532, cy:108, r:9,  color:"#63BE21", leader:"Manuel Gavira",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste · fort en Andalousie", es:"Vox · extrema derecha · ultracentralista · fuerte implantación en Andalucía" }},
-      { name:"Por Andalucía", cx:148, cy:268, r:7, color:"#C0004E", leader:"Inmaculada Nieto",
-        desc:{ fr:"Sumar/IU Andalousie · gauche · fédéraliste", es:"Sumar/IU Andalucía · izquierda · federalista" }},
-      { name:"PA",      cx:330, cy:358, r:5,  color:"#009A6E", leader:"Esperanza Oña",
-        desc:{ fr:"Partido Andalucista · régionalisme andalou · centre · marginal aujourd'hui", es:"Partido Andalucista · regionalismo andaluz · centro · marginal actualmente" }},
-    ],
-    legend:{
-      fr:[ {color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite (PP dominant)"},{color:"#63BE21",label:"Extrême droite"},{color:"#009A6E",label:"Régionalisme andalou (marginal)"} ],
-      es:[ {color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha (PP dominante)"},{color:"#63BE21",label:"Extrema derecha"},{color:"#009A6E",label:"Regionalismo andaluz (marginal)"} ],
-    }
-  },
-  {
-    id: "madrid",
-    name: { fr: "Madrid", es: "Madrid" },
-    subtitle: { fr: "Asamblea de Madrid — partis principaux", es: "Asamblea de Madrid — principales partidos" },
-    parties: [
-      { name:"PSOE-M",  cx:240, cy:188, r:9,  color:"#E4003A", leader:"Juan Lobato",
-        desc:{ fr:"Socialistes madrilènes · centre-gauche · unioniste", es:"Socialistas madrileños · centro-izquierda · unionista" }},
-      { name:"PP-M",    cx:435, cy:150, r:12, color:"#0056A2", leader:"Isabel Díaz Ayuso",
-        desc:{ fr:"PP Madrid · droite · unioniste fort · hégémonique (Díaz Ayuso)", es:"PP Madrid · derecha · fuertemente unionista · hegemónico (Díaz Ayuso)" }},
-      { name:"Vox-M",   cx:532, cy:108, r:9,  color:"#63BE21", leader:"Rocío Monasterio",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"Más Madrid", cx:175, cy:210, r:9, color:"#00A86B", leader:"Mónica García",
-        desc:{ fr:"Más Madrid · gauche verte · unioniste progressiste · fort à Madrid capitale", es:"Más Madrid · izquierda verde · unionista progresista · fuerte en la capital" }},
-      { name:"Sumar-M", cx:145, cy:265, r:6,  color:"#C0004E", leader:"Alejandra Jacinto",
-        desc:{ fr:"Sumar Madrid · gauche · fédéraliste", es:"Sumar Madrid · izquierda · federalista" }},
-    ],
-    legend:{
-      fr:[ {color:"#00A86B",label:"Gauche verte (Más Madrid)"},{color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite (PP très dominant)"},{color:"#63BE21",label:"Extrême droite"} ],
-      es:[ {color:"#00A86B",label:"Izquierda verde (Más Madrid)"},{color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha (PP muy dominante)"},{color:"#63BE21",label:"Extrema derecha"} ],
-    }
-  },
-  {
-    id: "navarra",
-    name: { fr: "Navarre", es: "Navarra" },
-    subtitle: { fr: "Parlamento de Navarra — partis principaux", es: "Parlamento de Navarra — principales partidos" },
-    parties: [
-      { name:"PSN",     cx:235, cy:185, r:8,  color:"#E4003A", leader:"Santos Cerdán",
-        desc:{ fr:"Socialistes navarrais (PSOE) · centre-gauche · unioniste fédéraliste", es:"Socialistas navarros (PSOE) · centro-izquierda · unionista federalista" }},
-      { name:"UPN",     cx:462, cy:140, r:9,  color:"#0044AA", leader:"Javier Esparza",
-        desc:{ fr:"Unión del Pueblo Navarro · droite · fort unioniste · anti-réunification avec le Pays Basque", es:"Unión del Pueblo Navarro · derecha · fuertemente unionista · contraria a la integración con el País Vasco" }},
-      { name:"EH Bildu Nav.", cx:108, cy:395, r:8, color:"#C8D400", leader:"Bakartxo Ruiz",
-        desc:{ fr:"Gauche abertzale · indépendantiste · favorable à la réunification navarro-basque", es:"Izquierda abertzale · independentista · favorable a la integración navarro-vasca" }},
-      { name:"Geroa Bai", cx:222, cy:338, r:7, color:"#E8820C", leader:"Uxue Barkos",
-        desc:{ fr:"Centre · nationalisme navarrais modéré · fédéraliste / autonomiste", es:"Centro · nacionalismo navarro moderado · federalista / autonomista" }},
-      { name:"PPN",     cx:435, cy:158, r:7,  color:"#0056A2", leader:"Javier García",
-        desc:{ fr:"PP Navarre · droite · unioniste fort", es:"PP Navarra · derecha · fuertemente unionista" }},
-      { name:"Vox Nav.",cx:530, cy:110, r:6,  color:"#63BE21", leader:"Maite Nosti",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-    ],
-    legend:{
-      fr:[ {color:"#0044AA",label:"Droite navarraise unioniste (UPN)"},{color:"#C8D400",label:"Gauche indépendantiste abertzale"},{color:"#E8820C",label:"Nationalisme navarrais modéré"},{color:"#E4003A",label:"Social-démocratie"} ],
-      es:[ {color:"#0044AA",label:"Derecha navarra unionista (UPN)"},{color:"#C8D400",label:"Izquierda independentista abertzale"},{color:"#E8820C",label:"Nacionalismo navarro moderado"},{color:"#E4003A",label:"Socialdemocracia"} ],
-    }
-  },
-  {
-    id: "aragon",
-    name: { fr: "Aragon", es: "Aragón" },
-    subtitle: { fr: "Cortes de Aragón — partis principaux", es: "Cortes de Aragón — principales partidos" },
-    parties: [
-      { name:"PSOE-Ar.", cx:238, cy:190, r:9,  color:"#E4003A", leader:"Javier Lambán",
-        desc:{ fr:"Socialistes aragonais · centre-gauche · unioniste", es:"Socialistas aragoneses · centro-izquierda · unionista" }},
-      { name:"PP-Ar.",   cx:432, cy:155, r:10, color:"#0056A2", leader:"Jorge Azcón",
-        desc:{ fr:"PP Aragon · droite · unioniste · au pouvoir depuis 2023", es:"PP Aragón · derecha · unionista · en el poder desde 2023" }},
-      { name:"Vox-Ar.",  cx:530, cy:108, r:7,  color:"#63BE21", leader:"Alejandro Nolasco",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"CHA",      cx:175, cy:348, r:7,  color:"#AA1111", leader:"Joaquín Palacín",
-        desc:{ fr:"Chunta Aragonesista · gauche · régionalisme aragonais · fédéraliste", es:"Chunta Aragonesista · izquierda · regionalismo aragonés · federalista" }},
-      { name:"PAR",      cx:382, cy:335, r:6,  color:"#DDAA00", leader:"Alberto Izquierdo",
-        desc:{ fr:"Partido Aragonés · centre-droit · régionalisme aragonais modéré", es:"Partido Aragonés · centro-derecha · regionalismo aragonés moderado" }},
-      { name:"Sumar-Ar.",cx:148, cy:265, r:6,  color:"#C0004E", leader:"Chechu Kramer",
-        desc:{ fr:"Sumar Aragon · gauche · fédéraliste", es:"Sumar Aragón · izquierda · federalista" }},
-    ],
-    legend:{
-      fr:[ {color:"#AA1111",label:"Régionalisme aragonais de gauche"},{color:"#DDAA00",label:"Régionalisme aragonais modéré"},{color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#AA1111",label:"Regionalismo aragonés de izquierda"},{color:"#DDAA00",label:"Regionalismo aragonés moderado"},{color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-  {
-    id: "canarias",
-    name: { fr: "Canaries", es: "Canarias" },
-    subtitle: { fr: "Parlamento de Canarias — partis principaux", es: "Parlamento de Canarias — principales partidos" },
-    parties: [
-      { name:"CC",       cx:415, cy:330, r:9,  color:"#C8960C", leader:"Fernando Clavijo",
-        desc:{ fr:"Coalición Canaria · centre-droit · régionalisme canarie · autonomiste, non indépendantiste", es:"Coalición Canaria · centro-derecha · regionalismo canario · autonomista, no independentista" }},
-      { name:"PSOE-C",   cx:238, cy:185, r:9,  color:"#E4003A", leader:"Ángel Víctor Torres",
-        desc:{ fr:"Socialistes canariens · centre-gauche · unioniste fédéraliste", es:"Socialistas canarios · centro-izquierda · unionista federalista" }},
-      { name:"PP-C",     cx:432, cy:155, r:9,  color:"#0056A2", leader:"Manuel Domínguez",
-        desc:{ fr:"PP Canaries · droite · unioniste", es:"PP Canarias · derecha · unionista" }},
-      { name:"NC-bc",    cx:162, cy:340, r:7,  color:"#009A6E", leader:"Luis Campos",
-        desc:{ fr:"Nueva Canarias / Bloque Canarista · gauche · régionalisme de gauche canarie", es:"Nueva Canarias / Bloque Canarista · izquierda · regionalismo de izquierda canario" }},
-      { name:"Vox-C",    cx:530, cy:110, r:6,  color:"#63BE21", leader:"Nicasio Galván",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"Sumar-C",  cx:148, cy:268, r:6,  color:"#C0004E", leader:"Noemí Santana",
-        desc:{ fr:"Sumar Canaries · gauche · fédéraliste", es:"Sumar Canarias · izquierda · federalista" }},
-    ],
-    legend:{
-      fr:[ {color:"#C8960C",label:"Régionalisme canarie (CC)"},{color:"#009A6E",label:"Régionalisme de gauche canarie"},{color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#C8960C",label:"Regionalismo canario (CC)"},{color:"#009A6E",label:"Regionalismo de izquierda canario"},{color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-  {
-    id: "castilla_leon",
-    name: { fr: "Castille-León", es: "Castilla y León" },
-    subtitle: { fr: "Cortes de Castilla y León — partis principaux", es: "Cortes de Castilla y León — principales partidos" },
-    parties: [
-      { name:"PP-CL",   cx:435, cy:152, r:12, color:"#0056A2", leader:"Alfonso Fernández Mañueco",
-        desc:{ fr:"PP Castille-León · droite · hégémonique · unioniste fort", es:"PP Castilla y León · derecha · hegemónico · fuertemente unionista" }},
-      { name:"PSOE-CL", cx:238, cy:188, r:8,  color:"#E4003A", leader:"Luis Tudanca",
-        desc:{ fr:"Socialistes · centre-gauche · unioniste", es:"Socialistas · centro-izquierda · unionista" }},
-      { name:"Vox-CL",  cx:532, cy:108, r:8,  color:"#63BE21", leader:"Juan García-Gallardo",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste · partenaire de coalit. PP en CL", es:"Vox · extrema derecha · ultracentralista · socio de gobierno del PP en CyL" }},
-      { name:"Soria ¡Ya!", cx:295, cy:348, r:6, color:"#8B4A00", leader:"Luis Rey",
-        desc:{ fr:"Mouvement régionaliste de Soria · anti-abandon rural · apolitique / transversal", es:"Movimiento regionalista soriano · contra el despoblamiento rural · transversal / apartidista" }},
-      { name:"Por CL",  cx:148, cy:265, r:6,  color:"#C0004E", leader:"Luis Tudanca",
-        desc:{ fr:"Sumar/IU Castille-León · gauche · fédéraliste", es:"Sumar/IU Castilla y León · izquierda · federalista" }},
-    ],
-    legend:{
-      fr:[ {color:"#0056A2",label:"Droite (PP très dominant)"},{color:"#63BE21",label:"Extrême droite (Vox en coalition)"},{color:"#8B4A00",label:"Régionalisme rural (Soria ¡Ya!)"} ],
-      es:[ {color:"#0056A2",label:"Derecha (PP muy dominante)"},{color:"#63BE21",label:"Extrema derecha (Vox en coalición)"},{color:"#8B4A00",label:"Regionalismo rural (Soria ¡Ya!)"} ],
-    }
-  },
-  {
-    id: "baleares",
-    name: { fr: "Baléares", es: "Baleares" },
-    subtitle: { fr: "Parlament de les Illes Balears — partis principaux", es: "Parlament de les Illes Balears — principales partidos" },
-    parties: [
-      { name:"PP-IB",   cx:432, cy:155, r:10, color:"#0056A2", leader:"Marga Prohens",
-        desc:{ fr:"PP Baléares · droite · unioniste · au pouvoir depuis 2023", es:"PP Baleares · derecha · unionista · en el poder desde 2023" }},
-      { name:"PSOE-IB", cx:238, cy:188, r:8,  color:"#E4003A", leader:"Francina Armengol",
-        desc:{ fr:"Socialistes des Baléares · centre-gauche · unioniste fédéraliste", es:"Socialistas de Baleares · centro-izquierda · unionista federalista" }},
-      { name:"Vox-IB",  cx:530, cy:108, r:6,  color:"#63BE21", leader:"Jorge Campos",
-        desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"MÉS per Mallorca", cx:148, cy:352, r:8, color:"#009A44", leader:"Lluís Apesteguia",
-        desc:{ fr:"Gauche verte · nationalisme des îles · fédéraliste / pro-autodétermination", es:"Izquierda verde · nacionalismo de las islas · federalista / pro-autodeterminación" }},
-      { name:"El PI",   cx:380, cy:335, r:6,  color:"#DDAA00", leader:"Llorenç Córdoba",
-        desc:{ fr:"El Pi · centre · régionalisme baléare modéré · autonomiste", es:"El Pi · centro · regionalismo balear moderado · autonomista" }},
-    ],
-    legend:{
-      fr:[ {color:"#009A44",label:"Nationalisme des îles (MÉS)"},{color:"#DDAA00",label:"Régionalisme modéré (El Pi)"},{color:"#E4003A",label:"Social-démocratie"},{color:"#0056A2",label:"Droite unioniste"} ],
-      es:[ {color:"#009A44",label:"Nacionalismo insular (MÉS)"},{color:"#DDAA00",label:"Regionalismo moderado (El Pi)"},{color:"#E4003A",label:"Socialdemocracia"},{color:"#0056A2",label:"Derecha unionista"} ],
-    }
-  },
-];
+// CCAA data loaded from data.js
 
 // ─── BUILD NAV & PANELS ───────────────────────────────────────────────────────
 
@@ -660,9 +382,10 @@ function buildSVG(parties) {
     const ly = p.cy < 60 ? p.cy + p.r + 14 : p.cy - p.r - 6;
     const descEsc = p.desc[lang].replace(/'/g,"\\'").replace(/"/g,'&quot;');
     const nameEsc = p.name.replace(/'/g,"\\'");
+    const photoEsc = (p.photo||'');
     const leaderEsc = (p.leader||'').replace(/'/g,"\\'");
     return `
-    <g style="cursor:pointer" onmouseenter="showTip(event,'${nameEsc}','${leaderEsc}','${descEsc}')" onmouseleave="hideTip()">
+    <g style="cursor:pointer" onmouseenter="showTip(event,'${nameEsc}','${leaderEsc}',${p.seats||0},'${photoEsc}','${p.color}','${descEsc}')" onmouseleave="hideTip()">
       <circle cx="${p.cx}" cy="${p.cy}" r="${p.r}" fill="${p.color}" opacity="0.92"/>
       <text x="${lx}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="500" fill="${p.color}" font-family="'DM Sans',sans-serif">${p.name}</text>
     </g>`;
@@ -694,11 +417,19 @@ function buildSVG(parties) {
 
 // ─── TOOLTIP ─────────────────────────────────────────────────────────────────
 
-function showTip(e, name, leader, desc) {
+function showTip(e, name, leader, seats, photo, color, desc) {
   const t = document.getElementById('tip');
-  t.innerHTML = '<strong>' + name + '</strong>' +
-    (leader ? '<span style="display:block;font-size:0.7rem;opacity:0.7;margin-bottom:3px;">' + leader + '</span>' : '') +
-    desc;
+  const initials = name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  const photoHtml = photo
+    ? '<img src="' + photo + '" onerror="this.style.display='none';this.nextSibling.style.display='flex'" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">'
+    + '<div style="display:none;width:40px;height:40px;border-radius:50%;background:' + color + '22;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:' + color + ';flex-shrink:0;">' + initials + '</div>'
+    : '<div style="display:flex;width:40px;height:40px;border-radius:50%;background:' + color + '22;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:' + color + ';flex-shrink:0;">' + initials + '</div>';
+  const seatsHtml = seats > 0 ? '<span style="font-size:0.68rem;opacity:0.6;margin-left:6px;">' + seats + ' siège' + (seats>1?'s':'') + '</span>' : '';
+  t.innerHTML =
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' + photoHtml +
+    '<div><strong style="font-size:0.85rem;">' + name + '</strong>' + seatsHtml +
+    (leader ? '<div style="font-size:0.7rem;opacity:0.65;margin-top:1px;">' + leader + '</div>' : '') + '</div></div>' +
+    '<div style="font-size:0.73rem;line-height:1.55;opacity:0.85;">' + desc + '</div>';
   t.style.display = 'block';
   t.style.left = (e.clientX + 14) + 'px';
   t.style.top = (e.clientY - 10) + 'px';
@@ -764,7 +495,7 @@ function buildMobileSVG(parties) {
       'data-leader="' + (p.leader||'').replace(/"/g,'&quot;') + '" ' +
       'data-desc="' + p.desc[lang].replace(/"/g,'&quot;') + '" ' +
       'data-color="' + p.color + '" ' +
-      'data-cx="' + p.cx + '" data-cy="' + p.cy + '">' +
+      'data-cx="' + p.cx + '" data-cy="' + p.cy + '" data-seats="' + (p.seats||0) + '" data-photo="' + (p.photo||'').replace(/"/g,'&quot;') + '">' +
       '<circle cx="' + p.cx + '" cy="' + p.cy + '" r="' + (p.r + 5) + '" fill="transparent"/>' +
       '<circle cx="' + p.cx + '" cy="' + p.cy + '" r="' + p.r + '" fill="' + p.color + '" opacity="0.92"/>' +
       '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" font-size="11" font-weight="500" fill="' + p.color + '" font-family="DM Sans,sans-serif">' + p.name + '</text>' +
@@ -790,6 +521,8 @@ function mobilePartyTap(el) {
   openDrawer(
     el.getAttribute('data-name'),
     el.getAttribute('data-leader'),
+    parseInt(el.getAttribute('data-seats')||'0'),
+    el.getAttribute('data-photo'),
     el.getAttribute('data-desc'),
     el.getAttribute('data-color'),
     parseInt(el.getAttribute('data-cx')),
@@ -815,23 +548,31 @@ if (sc) {
 }
 
 // Drawer
-function openDrawer(name, leader, desc, color, cx, cy) {
-  var dot = document.getElementById('drawer-dot');
-  var nm = document.getElementById('drawer-name');
-  var dc = document.getElementById('drawer-desc');
-  var tg = document.getElementById('drawer-tags');
+function openDrawer(name, leader, seats, photo, desc, color, cx, cy) {
   var ov = document.getElementById('drawer-overlay');
   var dr = document.getElementById('drawer');
-  if (!dot || !ov || !dr) return;
+  if (!ov || !dr) return;
 
-  dot.style.background = color;
-  nm.textContent = name;
-  document.getElementById('drawer-leader').textContent = leader || '';
-  dc.textContent = desc;
+  var initials = name.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+  var photoHtml = photo
+    ? '<img src="'+photo+'" onerror="this.style.display='none';this.nextSibling.style.display='flex'" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;">'
+      + '<div style="display:none;width:52px;height:52px;border-radius:50%;background:'+color+'22;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:'+color+';flex-shrink:0;">'+initials+'</div>'
+    : '<div style="display:flex;width:52px;height:52px;border-radius:50%;background:'+color+'22;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:'+color+';flex-shrink:0;">'+initials+'</div>';
 
-  var axH = cx < 326 ? (lang === 'fr' ? 'Gauche' : 'Izquierda') : (lang === 'fr' ? 'Droite' : 'Derecha');
-  var axV = cy < 255 ? (lang === 'fr' ? 'Unioniste' : 'Unionista') : (lang === 'fr' ? 'Indépendantiste' : 'Independentista');
-  tg.innerHTML = '<span class="dtag">' + axH + '</span><span class="dtag">' + axV + '</span>';
+  var seatsStr = seats > 0 ? seats + ' siège' + (seats > 1 ? 's' : '') : '';
+  var axH = cx < 326 ? (lang==='fr'?'Gauche':'Izquierda') : (lang==='fr'?'Droite':'Derecha');
+  var axV = cy < 255 ? (lang==='fr'?'Unioniste':'Unionista') : (lang==='fr'?'Indépendantiste':'Independentista');
+
+  dr.innerHTML =
+    '<div id="drawer-handle" style="width:36px;height:4px;background:var(--border);border-radius:2px;margin:10px auto 14px;"></div>' +
+    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:0.5rem;">' + photoHtml +
+    '<div><div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;">' + name + '</div>' +
+    (leader ? '<div style="font-size:0.82rem;color:var(--muted);font-style:italic;">' + leader + '</div>' : '') +
+    (seatsStr ? '<div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">' + seatsStr + '</div>' : '') +
+    '</div></div>' +
+    '<div style="font-size:0.85rem;line-height:1.7;color:var(--text);">' + desc + '</div>' +
+    '<div style="margin-top:0.9rem;display:flex;gap:0.4rem;">' +
+    '<span class="dtag">' + axH + '</span><span class="dtag">' + axV + '</span></div>';
 
   ov.style.display = 'block';
   requestAnimationFrame(function() {
