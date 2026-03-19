@@ -193,11 +193,10 @@
   .lang-btn.active { background: rgba(247,245,240,0.15); border-color: rgba(247,245,240,0.6); color: #F7F5F0; }
 
   @media (max-width: 700px) {
-    .grid-2 { grid-template-columns: 1fr; }
-    header { flex-direction: column; align-items: flex-start; }
-    header p { text-align: left; }
-    main { padding: 1.2rem; }
-    nav { padding: 0 1rem; }
+    header { flex-direction: column; align-items: flex-start; padding: 0.5rem 1rem; }
+    header p { text-align: left; display: none; }
+    main { padding: 0.4rem 0.5rem; }
+    nav { padding: 0 0.5rem; }
   }
 </style>
 </head>
@@ -248,7 +247,7 @@ const CCAA = [
   {
     id: "nacional",
     name: { fr: "Partis nationaux", es: "Partidos nacionales" },
-    subtitle: { fr: "Congrès des Députés — élections 2023", es: "Congreso de los Diputados — elecciones 2023" },
+    subtitle: { fr: "Congrès des Députés — mis à jour mars 2026", es: "Congreso de los Diputados — actualizado marzo 2026" },
     parties: [
       { name:"Podemos",  cx:108, cy:175, r:9,  color:"#6B2B9A",
         desc:{ fr:"Extrême gauche · fédéraliste-plurinationaliste · 5 sièges (2023)", es:"Extrema izquierda · federalista-plurinacionalista · 5 escaños (2023)" }},
@@ -263,7 +262,7 @@ const CCAA = [
       { name:"UPN",      cx:468, cy:138, r:6,  color:"#004A9A",
         desc:{ fr:"Droite navarraise · unioniste · 1 siège (2023)", es:"Derecha navarra · unionista · 1 escaño (2023)" }},
       { name:"Vox",      cx:532, cy:108, r:10, color:"#63BE21",
-        desc:{ fr:"Extrême droite · ultra-centraliste, veut supprimer les CCAA · 33 sièges (2023)", es:"Extrema derecha · ultracentralista, quiere suprimir las CCAA · 33 escaños (2023)" }},
+        desc:{ fr:"Extrême droite · ultra-centraliste · crise interne (mars 2026) : Espinosa, Ortega Smith, Monasterio réclament un congrès extraordinaire contre Abascal", es:"Extrema derecha · ultracentralista · crisis interna (marzo 2026): Espinosa, Ortega Smith, Monasterio exigen congreso extraordinario contra Abascal" }},
       { name:"CC",       cx:418, cy:335, r:7,  color:"#C8960C",
         desc:{ fr:"Centre-droit · régionalisme canarie (autonomie, pas indépendance) · 4 sièges (2023)", es:"Centro-derecha · regionalismo canario (autonomía, no independencia) · 4 escaños (2023)" }},
     ],
@@ -275,14 +274,14 @@ const CCAA = [
   {
     id: "cataluña",
     name: { fr: "Catalogne", es: "Cataluña" },
-    subtitle: { fr: "Parlament de Catalunya — partis principaux", es: "Parlament de Catalunya — principales partidos" },
+    subtitle: { fr: "Parlament de Catalunya — mis à jour mars 2026", es: "Parlament de Catalunya — actualizado marzo 2026" },
     parties: [
       { name:"PSC",     cx:240, cy:190, r:11, color:"#E4003A",
         desc:{ fr:"Parti des Socialistes de Catalogne · centre-gauche · unioniste fédéraliste (branche catalane du PSOE)", es:"Partido de los Socialistas de Cataluña · centro-izquierda · unionista federalista (rama catalana del PSOE)" }},
-      { name:"ERC",     cx:148, cy:370, r:10, color:"#F4A900",
-        desc:{ fr:"Esquerra Republicana · gauche républicaine · indépendantiste · laïque", es:"Esquerra Republicana de Catalunya · izquierda republicana · independentista · laica" }},
-      { name:"Junts",   cx:390, cy:390, r:9,  color:"#00527F",
-        desc:{ fr:"Junts per Catalunya · droite libérale · indépendantiste · héritier de CiU", es:"Junts per Catalunya · derecha liberal · independentista · heredero de CiU" }},
+      { name:"ERC",     cx:148, cy:355, r:10, color:"#F4A900",
+        desc:{ fr:"Esquerra Republicana · gauche républicaine · indépendantiste · soutient Illa · négocie financement singulier avec PSOE (2025-26)", es:"Esquerra Republicana · izquierda republicana · independentista · apoya Illa · negocia financiación singular con PSOE (2025-26)" }},
+      { name:"Junts",   cx:400, cy:408, r:9,  color:"#00527F",
+        desc:{ fr:"Junts per Catalunya · droite libérale · indépendantiste dur · rupture PSOE (2025) · réclame concierto économique", es:"Junts per Catalunya · derecha liberal · independentista duro · ruptura PSOE (2025) · exige concierto económico" }},
       { name:"CUP",     cx:95,  cy:420, r:7,  color:"#FFCC00",
         desc:{ fr:"Candidatura d'Unitat Popular · extrême gauche · indépendantiste radical · anticapitaliste", es:"Candidatura d'Unitat Popular · extrema izquierda · independentista radical · anticapitalista" }},
       { name:"PP cat.", cx:435, cy:162, r:8,  color:"#0056A2",
@@ -293,8 +292,8 @@ const CCAA = [
         desc:{ fr:"Catalunya en Comú · gauche verte · fédéraliste / droit à décider (pas clairement indépendantiste)", es:"Catalunya en Comú · izquierda verde · federalista / derecho a decidir (no claramente independentista)" }},
       { name:"Cs cat.", cx:390, cy:132, r:6,  color:"#FA5000",
         desc:{ fr:"Ciudadanos Catalogne · centre libéral · unioniste fort (en déclin fort)", es:"Ciudadanos Cataluña · centro liberal · fuertemente unionista (en fuerte declive)" }},
-      { name:"Aliança", cx:455, cy:138, r:6,  color:"#0044AA",
-        desc:{ fr:"Aliança Catalana · droite dure · indépendantiste et identitaire · nouveau parti (2024)", es:"Aliança Catalana · derecha dura · independentista e identitaria · nuevo partido (2024)" }},
+      { name:"Aliança", cx:455, cy:130, r:7,  color:"#0044AA",
+        desc:{ fr:"Aliança Catalana · droite identitaire · indépendantiste · en forte croissance, pression sur Junts par la droite (2025-26)", es:"Aliança Catalana · derecha identitaria · independentista · en fuerte crecimiento, presiona a Junts por la derecha (2025-26)" }},
     ],
     legend:{
       fr:[ {color:"#E4003A",label:"Social-démocratie (unioniste)"},{color:"#F4A900",label:"Gauche indépendantiste"},{color:"#FFCC00",label:"Extrême gauche indépendantiste"},{color:"#A8139E",label:"Gauche verte / fédéraliste"},{color:"#00527F",label:"Droite indépendantiste"},{color:"#0056A2",label:"Droite unioniste"} ],
