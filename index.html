@@ -18,9 +18,9 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; overflow: hidden; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); display: flex; flex-direction: column; }
-  header { background: var(--text); color: #F7F5F0; padding: 0.55rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-shrink: 0; }
-  header h1 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; white-space: nowrap; }
-  header p { font-size: 0.68rem; opacity: 0.45; text-align: right; line-height: 1.4; max-width: 300px; }
+  header { background: var(--text); color: #F7F5F0; padding: 0.3rem 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-shrink: 0; min-height: 0; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: 0.88rem; font-weight: 600; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; }
+  header p { font-size: 0.62rem; opacity: 0.4; text-align: right; line-height: 1.3; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 1.2rem; display: flex; overflow-x: auto; scrollbar-width: none; flex-shrink: 0; }
   nav::-webkit-scrollbar { display: none; }
   nav button { background: none; border: none; border-bottom: 2px solid transparent; padding: 0.45rem 0.65rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--muted); cursor: pointer; white-space: nowrap; transition: all 0.15s; letter-spacing: 0.02em; }
@@ -40,7 +40,7 @@
   .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .note { font-size: 0.65rem; color: var(--muted); margin-top: 0.35rem; font-style: italic; line-height: 1.5; flex-shrink: 0; }
   .lang-switcher { display: flex; gap: 6px; align-items: center; }
-  .lang-btn { background: transparent; border: 1px solid rgba(247,245,240,0.25); color: rgba(247,245,240,0.6); border-radius: 4px; padding: 4px 10px; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; transition: all 0.15s; }
+  .lang-btn { background: transparent; border: 1px solid rgba(247,245,240,0.25); color: rgba(247,245,240,0.6); border-radius: 4px; padding: 2px 8px; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; transition: all 0.15s; }
   .lang-btn:hover { border-color: rgba(247,245,240,0.6); color: rgba(247,245,240,0.9); }
   .lang-btn.active { background: rgba(247,245,240,0.15); border-color: rgba(247,245,240,0.6); color: #F7F5F0; }
   @media (max-width: 700px) {
@@ -62,7 +62,61 @@
   .swipe-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); transition: background 0.2s, transform 0.2s; }
   .swipe-dot.active { background: var(--accent); transform: scale(1.4); }
   #swipe-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); padding: 0.4rem 0.6rem; }
-  #drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 50; opacity: 0; transition: opacity 0.25s; }
+  /* Next elections panel */
+  .elections-panel {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0.8rem;
+    justify-content: center;
+  }
+  .elections-panel-title {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .elections-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.15rem;
+    line-height: 1.2;
+  }
+  .elections-note {
+    font-size: 0.62rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .elections-divider {
+    width: 24px;
+    height: 1px;
+    background: var(--border);
+    margin: 0.5rem 0;
+  }
+  @media (max-width: 900px) { .elections-panel { width: 160px; } }
+  @media (max-width: 700px) {
+    .elections-panel { width: 100%; padding-left: 0; padding-top: 0.6rem; border-top: 1px solid var(--border); margin-top: 0.4rem; }
+  }
+
+  /* Desktop: matrix + elections side by side */
+  .matrix-with-elections {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    gap: 0;
+  }
+  .matrix-with-elections svg.matrix { flex: 1; }
+  @media (max-width: 700px) {
+    .matrix-with-elections { flex-direction: column; }
+  }
+
+    #drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 50; opacity: 0; transition: opacity 0.25s; }
   #drawer-overlay.open { opacity: 1; }
   #drawer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-radius: 20px 20px 0 0; padding: 0 1.4rem 2.5rem; z-index: 51; transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height: 65vh; overflow-y: auto; }
   #drawer.open { transform: translateY(0); }
@@ -121,7 +175,7 @@
 <div id="drawer"></div>
 
 <header>
-  <h1 id="h-title">Partis politiques<br>espagnols</h1>
+  <h1 id="h-title">Partis politiques espagnols</h1>
   <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('fr')">FR</button>
@@ -154,14 +208,14 @@ const isMobile = () => window.innerWidth <= 700;
 
 const T = {
   fr: {
-    title: "Partis politiques<br>espagnols",
+    title: "Partis politiques espagnols",
     subtitle: "Positionnement sur les axes gauche/droite et unioniste/indépendantiste.<br>Survoler un parti pour les détails.",
     axLeft: "◀ Gauche", axRight: "Droite ▶",
     axUp: "▲ Unioniste / Centraliste", axDown: "▼ Indépendantiste / Régionaliste",
     note: "Positions indicatives basées sur les programmes et votes au parlement. L'axe territorial reflète la posture vis-à-vis de l'unité de l'État espagnol.",
   },
   es: {
-    title: "Partidos políticos<br>españoles",
+    title: "Partidos políticos españoles",
     subtitle: "Posicionamiento en los ejes izquierda/derecha y unionista/independentista.<br>Pasa el cursor sobre un partido para ver los detalles.",
     axLeft: "◀ Izquierda", axRight: "Derecha ▶",
     axUp: "▲ Unionista / Centralista", axDown: "▼ Independentista / Regionalista",
@@ -199,7 +253,10 @@ function buildPanel(i) {
     '<div class="matrix-wrap">' +
     '<div class="matrix-header"><div class="matrix-title">' + region.name[lang] + '</div>' +
     '<div class="matrix-subtitle">' + region.subtitle[lang] + '</div></div>' +
+    '<div class="matrix-with-elections">' +
     buildSVG(region.parties) +
+    buildElectionsPanel(region) +
+    '</div>' +
     '<div class="legend">' + leg + '</div>' +
     '<p class="note">' + T[lang].note + '</p></div>';
 }
@@ -334,7 +391,9 @@ function buildSwipePanel(i) {
     '<div class="matrix-wrap" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">' +
     '<div class="matrix-subtitle" style="flex-shrink:0;margin-bottom:0.25rem;">' + region.subtitle[lang] + '</div>' +
     buildMobileSVG(region.parties) +
-    '<div class="legend" style="flex-shrink:0;">' + leg + '</div></div>';
+    '<div class="legend" style="flex-shrink:0;">' + leg + '</div>' +
+    buildElectionsPanel(region) +
+    '</div>';
 }
 
 function buildMobileSVG(parties) {
@@ -429,6 +488,20 @@ function closeDrawer() {
   ov.classList.remove('open');
   dr.classList.remove('open');
   setTimeout(function() { ov.style.display = 'none'; }, 300);
+}
+
+function buildElectionsPanel(region) {
+  if (!region.nextElection) return '';
+  var el = region.nextElection[lang];
+  var isPast = el.date.indexOf('passées') !== -1 || el.date.indexOf('celebradas') !== -1;
+  var titleFr = isPast ? 'Dernières élections' : 'Prochaines élections';
+  var titleEs = isPast ? 'Últimas elecciones' : 'Próximas elecciones';
+  var title = lang === 'fr' ? titleFr : titleEs;
+  return '<div class="elections-panel">' +
+    '<div class="elections-panel-title">' + title + '</div>' +
+    '<div class="elections-date">' + el.date + '</div>' +
+    '<div class="elections-note">' + el.note + '</div>' +
+    '</div>';
 }
 
 buildSwipePanel(0);

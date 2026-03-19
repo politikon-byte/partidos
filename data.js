@@ -9,7 +9,11 @@ var CCAA = [
     id: "nacional",
     name: { fr: "Partis nationaux", es: "Partidos nacionales" },
     subtitle: { fr: "Congrès des Députés — mis à jour mars 2026", es: "Congreso de los Diputados — actualizado marzo 2026" },
-    parties: [
+    nextElection: {
+      fr: { date: "Été 2027 (au plus tard)", note: "Sánchez a confirmé vouloir aller au bout de la législature" },
+      es: { date: "Verano 2027 (como máximo)", note: "Sánchez ha confirmado agotar la legislatura" },
+    },
+        parties: [
       { name:"Podemos",  cx:108, cy:175, r:9,  color:"#6B2B9A", leader:"Ione Belarra", seats:5,
         photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Ione_Belarra_en_el_Congreso_de_los_Diputados_%28cropped%29.jpg?width=120",
         desc:{ fr:"Extrême gauche · fédéraliste-plurinationaliste · 5 sièges (2023)", es:"Extrema izquierda · federalista-plurinacionalista · 5 escaños (2023)" }},
@@ -44,7 +48,11 @@ var CCAA = [
     id: "cataluña",
     name: { fr: "Catalogne", es: "Cataluña" },
     subtitle: { fr: "Parlament de Catalunya — mis à jour mars 2026", es: "Parlament de Catalunya — actualizado marzo 2026" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2028 (cycle normal)", note: "Prochaine élection au terme des 4 ans de la législature Illa" },
+      es: { date: "Mayo 2028 (ciclo normal)", note: "Próximas elecciones al término de la legislatura Illa" },
+    },
+        parties: [
       { name:"PSC",     cx:240, cy:190, r:11, color:"#E4003A", leader:"Salvador Illa", seats:42, photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Salvador_Illa_2023_%28cropped%29.jpg?width=120",
         desc:{ fr:"Parti des Socialistes de Catalogne · centre-gauche · unioniste fédéraliste", es:"PSC · centro-izquierda · unionista federalista" }},
       { name:"ERC",     cx:148, cy:355, r:10, color:"#F4A900", leader:"Oriol Junqueras", seats:20, photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Oriol_Junqueras_%28cropped%29.jpg?width=120",
@@ -71,7 +79,11 @@ var CCAA = [
     id: "euskadi",
     name: { fr: "Pays Basque", es: "País Vasco" },
     subtitle: { fr: "Eusko Legebiltzarra — partis principaux", es: "Eusko Legebiltzarra — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Avril 2028 (cycle normal)", note: "Élections prévues après les 4 ans de la législature 2024" },
+      es: { date: "Abril 2028 (ciclo normal)", note: "Elecciones previstas tras los 4 años de la legislatura 2024" },
+    },
+        parties: [
       { name:"EH Bildu", cx:108, cy:400, r:10, color:"#C8D400", leader:"Arnaldo Otegi", seats:27, photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Arnaldo_Otegi_%28cropped%29.jpg?width=120",
         desc:{ fr:"Gauche indépendantiste · héritière d'Herri Batasuna · abertzale de gauche", es:"Izquierda independentista · heredera de Herri Batasuna · izquierda abertzale" }},
       { name:"EAJ-PNV", cx:370, cy:340, r:11, color:"#009A44", leader:"Imanol Pradales", seats:27, photo:"",
@@ -94,7 +106,11 @@ var CCAA = [
     id: "galicia",
     name: { fr: "Galice", es: "Galicia" },
     subtitle: { fr: "Parlamento de Galicia — partis principaux", es: "Parlamento de Galicia — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Fév. 2028 (cycle normal)", note: "Prochaine élection au terme des 4 ans de la législature Rueda" },
+      es: { date: "Feb. 2028 (ciclo normal)", note: "Próximas elecciones al término de la legislatura Rueda" },
+    },
+        parties: [
       { name:"PPdeG",   cx:425, cy:145, r:11, color:"#0056A2", leader:"Alfonso Rueda", seats:40, photo:"",
         desc:{ fr:"PP Galice · droite · hégémonique · unioniste, mais valorise identité galicienne", es:"PP Galicia · derecha · hegemónico · unionista, aunque reivindica la identidad gallega" }},
       { name:"BNG",     cx:132, cy:370, r:9,  color:"#3B8A8A", leader:"Ana Pontón", seats:25, photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Ana_Pont%C3%B3n_%28cropped%29.jpg?width=120",
@@ -113,7 +129,11 @@ var CCAA = [
     id: "comunitat_valenciana",
     name: { fr: "C. Valencienne", es: "C. Valenciana" },
     subtitle: { fr: "Corts Valencianes — partis principaux", es: "Corts Valencianes — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PSPV",    cx:238, cy:188, r:9,  color:"#E4003A", leader:"Diana Morant", seats:31, photo:"",
         desc:{ fr:"Socialistes valenciens · centre-gauche · unioniste fédéraliste", es:"Socialistas valencianos (PSOE) · centro-izquierda · unionista federalista" }},
       { name:"PPCV",    cx:432, cy:158, r:11, color:"#0056A2", leader:"Carlos Mazón", seats:40, photo:"",
@@ -134,7 +154,11 @@ var CCAA = [
     id: "andalucia",
     name: { fr: "Andalousie", es: "Andalucía" },
     subtitle: { fr: "Parlamento de Andalucía — partis principaux", es: "Parlamento de Andalucía — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Juin 2026", note: "Moreno dissoudra le parlement en avril — date probable : 14 juin" },
+      es: { date: "Junio 2026", note: "Moreno disolverá el parlamento en abril — fecha probable: 14 de junio" },
+    },
+        parties: [
       { name:"PSOE-A",  cx:240, cy:192, r:10, color:"#E4003A", leader:"María Jesús Montero", seats:30, photo:"",
         desc:{ fr:"Socialistes andalous · centre-gauche · unioniste", es:"Socialistas andaluces · centro-izquierda · unionista" }},
       { name:"PP-A",    cx:435, cy:155, r:11, color:"#0056A2", leader:"Juanma Moreno Bonilla", seats:58, photo:"",
@@ -153,7 +177,11 @@ var CCAA = [
     id: "madrid",
     name: { fr: "Madrid", es: "Madrid" },
     subtitle: { fr: "Asamblea de Madrid — partis principaux", es: "Asamblea de Madrid — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PSOE-M",  cx:240, cy:188, r:9,  color:"#E4003A", leader:"Juan Lobato", seats:27, photo:"",
         desc:{ fr:"Socialistes madrilènes · centre-gauche · unioniste", es:"Socialistas madrileños · centro-izquierda · unionista" }},
       { name:"PP-M",    cx:435, cy:150, r:12, color:"#0056A2", leader:"Isabel Díaz Ayuso", seats:65, photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Isabel_D%C3%ADaz_Ayuso_%28cropped%29.jpg?width=120",
@@ -174,7 +202,11 @@ var CCAA = [
     id: "navarra",
     name: { fr: "Navarre", es: "Navarra" },
     subtitle: { fr: "Parlamento de Navarra — partis principaux", es: "Parlamento de Navarra — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PSN",     cx:235, cy:185, r:8,  color:"#E4003A", leader:"Santos Cerdán", seats:11, photo:"",
         desc:{ fr:"Socialistes navarrais · centre-gauche · unioniste fédéraliste", es:"Socialistas navarros (PSOE) · centro-izquierda · unionista federalista" }},
       { name:"UPN",     cx:462, cy:140, r:9,  color:"#0044AA", leader:"Javier Esparza", seats:10, photo:"",
@@ -197,18 +229,25 @@ var CCAA = [
     id: "aragon",
     name: { fr: "Aragon", es: "Aragón" },
     subtitle: { fr: "Cortes de Aragón — partis principaux", es: "Cortes de Aragón — principales partidos" },
-    parties: [
-      { name:"PSOE-Ar.", cx:238, cy:190, r:9,  color:"#E4003A", leader:"Javier Lambán", seats:21, photo:"",
+    nextElection: {
+      fr: { date: "Élections passées : 8 fév. 2026", note: "PP 26 · PSOE 18 · Vox 14 · CHA 6 · Aragón Existe 2 · IU-Sumar 1" },
+      es: { date: "Elecciones celebradas: 8 feb. 2026", note: "PP 26 · PSOE 18 · Vox 14 · CHA 6 · Aragón Existe 2 · IU-Sumar 1" },
+    },
+        parties: [
+      { name:"PSOE-Ar.", cx:238, cy:190, r:9,  color:"#E4003A", leader:"Pilar Alegría", seats:18, photo:"",
         desc:{ fr:"Socialistes aragonais · centre-gauche · unioniste", es:"Socialistas aragoneses · centro-izquierda · unionista" }},
-      { name:"PP-Ar.",   cx:432, cy:155, r:10, color:"#0056A2", leader:"Jorge Azcón", seats:28, photo:"",
+      { name:"PP-Ar.",   cx:432, cy:155, r:10, color:"#0056A2", leader:"Jorge Azcón", seats:26, photo:"",
         desc:{ fr:"PP Aragon · droite · unioniste · au pouvoir depuis 2023", es:"PP Aragón · derecha · unionista · en el poder desde 2023" }},
-      { name:"Vox-Ar.",  cx:530, cy:108, r:7,  color:"#63BE21", leader:"Alejandro Nolasco", seats:7, photo:"",
+      { name:"Vox-Ar.",  cx:530, cy:108, r:8,  color:"#63BE21", leader:"Alejandro Nolasco", seats:14, photo:"",
         desc:{ fr:"Vox · extrême droite · ultra-centraliste", es:"Vox · extrema derecha · ultracentralista" }},
-      { name:"CHA",      cx:175, cy:348, r:7,  color:"#AA1111", leader:"Joaquín Palacín", seats:2, photo:"",
+      { name:"CHA",      cx:160, cy:348, r:8,  color:"#AA1111", leader:"Jorge Pueyo", seats:6, photo:"",
         desc:{ fr:"Chunta Aragonesista · gauche · régionalisme aragonais · fédéraliste", es:"Chunta Aragonesista · izquierda · regionalismo aragonés · federalista" }},
-      { name:"PAR",      cx:382, cy:335, r:6,  color:"#DDAA00", leader:"Alberto Izquierdo", seats:4, photo:"",
+      { name:"PAR",      cx:382, cy:335, r:5,  color:"#DDAA00", leader:"Alberto Izquierdo", seats:0, photo:"",
         desc:{ fr:"Partido Aragonés · centre-droit · régionalisme aragonais modéré", es:"Partido Aragonés · centro-derecha · regionalismo aragonés moderado" }},
-      { name:"Sumar-Ar.",cx:148, cy:265, r:6,  color:"#C0004E", leader:"Chechu Kramer", seats:4, photo:"",
+      { name:"Aragón Existe", cx:300, cy:310, r:5, color:"#5A3E8C", leader:"Tomás Guitarte", seats:2,
+        photo:"",
+        desc:{ fr:"Aragón-Teruel Existe · régionalisme · défense de Teruel et des zones rurales · centre", es:"Aragón-Teruel Existe · regionalismo · defensa de Teruel y zonas rurales · centro" }},
+      { name:"Sumar-Ar.",cx:148, cy:265, r:5,  color:"#C0004E", leader:"Marta Abengochea", seats:1, photo:"",
         desc:{ fr:"Sumar Aragon · gauche · fédéraliste", es:"Sumar Aragón · izquierda · federalista" }},
     ],
     legend:{
@@ -220,7 +259,11 @@ var CCAA = [
     id: "canarias",
     name: { fr: "Canaries", es: "Canarias" },
     subtitle: { fr: "Parlamento de Canarias — partis principaux", es: "Parlamento de Canarias — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"CC",       cx:415, cy:330, r:9,  color:"#C8960C", leader:"Fernando Clavijo", seats:25, photo:"",
         desc:{ fr:"Coalición Canaria · centre-droit · régionalisme canarie · autonomiste, non indépendantiste", es:"Coalición Canaria · centro-derecha · regionalismo canario · autonomista, no independentista" }},
       { name:"PSOE-C",   cx:238, cy:185, r:9,  color:"#E4003A", leader:"Ángel Víctor Torres", seats:17, photo:"",
@@ -243,16 +286,23 @@ var CCAA = [
     id: "castilla_leon",
     name: { fr: "Castille-León", es: "Castilla y León" },
     subtitle: { fr: "Cortes de Castilla y León — partis principaux", es: "Cortes de Castilla y León — principales partidos" },
-    parties: [
-      { name:"PP-CL",   cx:435, cy:152, r:12, color:"#0056A2", leader:"Alfonso Fernández Mañueco", seats:31, photo:"",
+    nextElection: {
+      fr: { date: "Élections passées : 15 mars 2026", note: "PP 33 · PSOE 30 · Vox 14 · UPL 3 · Soria ¡Ya! 1 · XAV 1" },
+      es: { date: "Elecciones celebradas: 15 mar. 2026", note: "PP 33 · PSOE 30 · Vox 14 · UPL 3 · Soria ¡Ya! 1 · XAV 1" },
+    },
+        parties: [
+      { name:"PP-CL",   cx:435, cy:152, r:12, color:"#0056A2", leader:"Alfonso Fernández Mañueco", seats:33, photo:"",
         desc:{ fr:"PP Castille-León · droite · hégémonique · unioniste fort", es:"PP Castilla y León · derecha · hegemónico · fuertemente unionista" }},
-      { name:"PSOE-CL", cx:238, cy:188, r:8,  color:"#E4003A", leader:"Luis Tudanca", seats:21, photo:"",
+      { name:"PSOE-CL", cx:238, cy:188, r:10, color:"#E4003A", leader:"Carlos Martínez", seats:30, photo:"",
         desc:{ fr:"Socialistes · centre-gauche · unioniste", es:"Socialistas · centro-izquierda · unionista" }},
-      { name:"Vox-CL",  cx:532, cy:108, r:8,  color:"#63BE21", leader:"Juan García-Gallardo", seats:13, photo:"",
+      { name:"Vox-CL",  cx:532, cy:108, r:8,  color:"#63BE21", leader:"Carlos Pollán", seats:14, photo:"",
         desc:{ fr:"Vox · extrême droite · ultra-centraliste · partenaire de coalition PP", es:"Vox · extrema derecha · ultracentralista · socio de gobierno del PP en CyL" }},
-      { name:"Soria ¡Ya!", cx:295, cy:348, r:6, color:"#8B4A00", leader:"Luis Rey", seats:3, photo:"",
+      { name:"UPL",      cx:220, cy:340, r:6, color:"#8B0033", leader:"Luis Mariano Santos", seats:3,
+        photo:"",
+        desc:{ fr:"Unión del Pueblo Leonés · régionalisme léonais · centre-gauche · défense de l'identité léonaise", es:"Unión del Pueblo Leonés · regionalismo leonés · centroizquierda · defensa de la identidad leonesa" }},
+      { name:"Soria ¡Ya!", cx:295, cy:348, r:5, color:"#8B4A00", leader:"Luis Rey", seats:1, photo:"",
         desc:{ fr:"Mouvement régionaliste de Soria · anti-abandon rural · transversal", es:"Movimiento regionalista soriano · contra el despoblamiento rural · transversal" }},
-      { name:"Por CL",  cx:148, cy:265, r:6,  color:"#C0004E", leader:"Luis Tudanca", seats:2, photo:"",
+      { name:"Por CL",  cx:148, cy:265, r:5,  color:"#C0004E", leader:"Luis Tudanca", seats:0, photo:"",
         desc:{ fr:"Sumar/IU Castille-León · gauche · fédéraliste", es:"Sumar/IU Castilla y León · izquierda · federalista" }},
     ],
     legend:{
@@ -264,7 +314,11 @@ var CCAA = [
     id: "baleares",
     name: { fr: "Baléares", es: "Baleares" },
     subtitle: { fr: "Parlament de les Illes Balears — partis principaux", es: "Parlament de les Illes Balears — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PP-IB",   cx:432, cy:155, r:10, color:"#0056A2", leader:"Marga Prohens", seats:25, photo:"",
         desc:{ fr:"PP Baléares · droite · unioniste · au pouvoir depuis 2023", es:"PP Baleares · derecha · unionista · en el poder desde 2023" }},
       { name:"PSOE-IB", cx:238, cy:188, r:8,  color:"#E4003A", leader:"Francina Armengol", seats:14, photo:"",
@@ -288,7 +342,11 @@ var CCAA = [
     id: "murcia",
     name: { fr: "Murcie", es: "Murcia" },
     subtitle: { fr: "Asamblea Regional de Murcia — partis principaux", es: "Asamblea Regional de Murcia — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PP-MU",   cx:440, cy:148, r:12, color:"#0056A2", leader:"Fernando López Miras", seats:22, photo:"",
         desc:{ fr:"PP Murcie · droite · hégémonique depuis 1995 · unioniste fort", es:"PP Murcia · derecha · hegemónico desde 1995 · fuertemente unionista" }},
       { name:"PSOE-MU", cx:240, cy:192, r:9,  color:"#E4003A", leader:"José Vélez", seats:12, photo:"",
@@ -307,7 +365,11 @@ var CCAA = [
     id: "extremadura",
     name: { fr: "Estrémadure", es: "Extremadura" },
     subtitle: { fr: "Asamblea de Extremadura — partis principaux", es: "Asamblea de Extremadura — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2029 (cycle normal)", note: "Élections anticipées en déc. 2025 — prochaines en 2029" },
+      es: { date: "Mayo 2029 (ciclo normal)", note: "Elecciones anticipadas en dic. 2025 — próximas en 2029" },
+    },
+        parties: [
       { name:"PP-EX",   cx:432, cy:152, r:11, color:"#0056A2", leader:"María Guardiola", seats:28, photo:"",
         desc:{ fr:"PP Estrémadure · droite · au pouvoir depuis 2023 · unioniste fort", es:"PP Extremadura · derecha · en el poder desde 2023 · fuertemente unionista" }},
       { name:"PSOE-EX", cx:238, cy:190, r:10, color:"#E4003A", leader:"Miguel Ángel Gallardo", seats:22, photo:"",
@@ -326,7 +388,11 @@ var CCAA = [
     id: "asturias",
     name: { fr: "Asturies", es: "Asturias" },
     subtitle: { fr: "Junta General del Principado de Asturias — partis principaux", es: "Junta General del Principado de Asturias — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PSOE-AS", cx:235, cy:188, r:10, color:"#E4003A", leader:"Adrián Barbón", seats:19, photo:"",
         desc:{ fr:"Socialistes des Asturies · centre-gauche · unioniste · gouverne avec Podemos", es:"Socialistas asturianos · centro-izquierda · unionista · gobierna con Podemos" }},
       { name:"PP-AS",   cx:432, cy:155, r:9,  color:"#0056A2", leader:"Diego Canga", seats:11, photo:"",
@@ -347,7 +413,11 @@ var CCAA = [
     id: "cantabria",
     name: { fr: "Cantabrie", es: "Cantabria" },
     subtitle: { fr: "Parlamento de Cantabria — partis principaux", es: "Parlamento de Cantabria — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PP-CA",   cx:430, cy:152, r:10, color:"#0056A2", leader:"María José Sáenz de Buruaga", seats:17, photo:"",
         desc:{ fr:"PP Cantabrie · droite · unioniste · au pouvoir depuis 2023", es:"PP Cantabria · derecha · unionista · en el poder desde 2023" }},
       { name:"PRC",     cx:350, cy:310, r:9,  color:"#009A6E", leader:"Miguel Ángel Revilla", seats:8, photo:"",
@@ -366,7 +436,11 @@ var CCAA = [
     id: "la_rioja",
     name: { fr: "La Rioja", es: "La Rioja" },
     subtitle: { fr: "Parlamento de La Rioja — partis principaux", es: "Parlamento de La Rioja — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PP-LR",   cx:435, cy:148, r:11, color:"#0056A2", leader:"González Lobato", seats:17, photo:"",
         desc:{ fr:"PP La Rioja · droite · hégémonique · unioniste fort · au pouvoir depuis 2023", es:"PP La Rioja · derecha · hegemónico · fuertemente unionista · en el poder desde 2023" }},
       { name:"PSOE-LR", cx:238, cy:190, r:8,  color:"#E4003A", leader:"Francisco Ocón", seats:9, photo:"",
@@ -383,7 +457,11 @@ var CCAA = [
     id: "castilla_la_mancha",
     name: { fr: "Castille-La Manche", es: "Castilla-La Mancha" },
     subtitle: { fr: "Cortes de Castilla-La Mancha — partis principaux", es: "Cortes de Castilla-La Mancha — principales partidos" },
-    parties: [
+    nextElection: {
+      fr: { date: "Mai 2027", note: "Cycle normal — 4e dimanche de mai" },
+      es: { date: "Mayo 2027", note: "Ciclo normal — 4º domingo de mayo" },
+    },
+        parties: [
       { name:"PSOE-CLM",cx:240, cy:188, r:11, color:"#E4003A", leader:"Emiliano García-Page", seats:19, photo:"",
         desc:{ fr:"Socialistes de Castille-La Manche · centre-gauche · unioniste · hégémonique, García-Page figure critique du gouvernement Sánchez", es:"Socialistas CLM · centro-izquierda · unionista · hegemónico, García-Page crítico del gobierno Sánchez" }},
       { name:"PP-CLM",  cx:432, cy:155, r:10, color:"#0056A2", leader:"Paco Núñez", seats:15, photo:"",
