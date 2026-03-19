@@ -4,7 +4,7 @@
 // Update positions here — never touch index.html for content changes.
 // Last updated: March 2026
 
-const CCAA = [
+var CCAA = [
   {
     id: "nacional",
     name: { fr: "Partis nationaux", es: "Partidos nacionales" },
